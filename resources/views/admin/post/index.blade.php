@@ -31,7 +31,7 @@
                         <td>{{$item->name}}</td>
                         <td>{{$item->status=='1' ? 'Hidden' : 'Visible'}}</td>
                         <td><a href="{{url('admin/post/'.$item->id)}}" class="btn btn-success">Edit</a>
-                        <td><a href="{{url('admin/post/'.$item->id)}}" class="btn btn-danger">Delete</a></td>
+                        <td><a href="{{url('admin/delete-post/'.$item->id)}}" class="btn btn-danger">Delete</a></td>
                     </tr>
                     @endforeach
                 </tbody>
