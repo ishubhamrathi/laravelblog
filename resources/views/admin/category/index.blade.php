@@ -5,14 +5,14 @@
 
     <div class="card mt-4">
         <div class="card-header">
-            <h4>View Category <a href="{{url('admin/add-category')}}" class="btn btn-primary btn-sm float-end">Add Category</a></h4>    
+            <h4>View Category <a href="{{url('admin/add-category')}}" class="btn btn-primary btn-sm float-end">Add Category</a></h4>
         </div>
         <div class="card-body">
             @if(session('message'))
                 <div class="alert alert-success">{{session('message')}}</div>
-            @endif  
+            @endif
 
-            <table class="table table-bordered">
+            <table id="myDataTable" class="table table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -38,7 +38,7 @@
                         <td>
                             <a href="{{url('admin/delete-category/'.$item->id)}}" class="btn btn-danger">Delete</a>
                         </td>
-                    </tr>                        
+                    </tr>
                     @endforeach
                 </tbody>
             </table>

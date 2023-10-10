@@ -14,8 +14,21 @@
     {{-- Summer Note Css  --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote.min.css" integrity="sha512-m52YCZLrqQpQ+k+84rmWjrrkXAUrpl3HK0IO4/naRwp58pyr7rf5PO1DbI2/aFYwyeIH/8teS9HbLxVyGqDv/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" integrity="sha512-ZbehZMIlGA8CTIOtdE+M81uj3mrcgyrh6ZFeG33A4FHECakGrOsTPlPQ8ijjLkxgImrdmSVUHn1j+ApjodYZow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{{-- datatable --}}
+<link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"> --}}
+{{-- <style>
+    .dataTables_wrapper .dataTables_paginate .paginate_button{
+        padding: 0px !important;
+        margin: 0px !important;
+    }
+    div.dataTables_wrapper div.dataTables_length select{
+        width: 50% !important;
 
-    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+    }
+    </style> --}}
+{{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 
 </head>
@@ -54,6 +67,14 @@
             });
             $('dropdown-toggle'),dropdown();
         })
+
+        $(document).ready(function(){
+            $('#myDataTable').DataTable();
+        })
     </script>
+    {{-- //datatable --}}
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
 </body>
 </html>

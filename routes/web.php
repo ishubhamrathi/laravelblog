@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -27,4 +27,10 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::put('update-post/{post_id}', [App\Http\Controllers\Admin\PostController::class, 'update']);
     Route::get('delete-post/{post_id}', [App\Http\Controllers\Admin\PostController::class, 'destroy']);
     //User
+    Route::get('users', [App\Http\Controllers\Admin\UserController::class, 'index']);
+    Route::get('user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
+    Route::put('update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
+    // Route::get('add-user', [App\Http\Controllers\Admin\UserController::class, 'create']);
+    // Route::post('add-user', [App\Http\Controllers\Admin\UserController::class, 'store']);
+    // Route::get('delete-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'destroy']);
 });
