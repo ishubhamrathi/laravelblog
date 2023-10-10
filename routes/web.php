@@ -10,6 +10,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+//turorial - frontend
+Route::get('tutorials/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
+
+
+
+//admin-starts
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
     // Category
@@ -33,4 +39,5 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     // Route::get('add-user', [App\Http\Controllers\Admin\UserController::class, 'create']);
     // Route::post('add-user', [App\Http\Controllers\Admin\UserController::class, 'store']);
     // Route::get('delete-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'destroy']);
+
 });

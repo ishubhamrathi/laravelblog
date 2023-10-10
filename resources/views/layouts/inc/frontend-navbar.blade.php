@@ -23,12 +23,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link {{Request::is('/') ? 'active' : ''}}" aria-current="page" href="{{url('/')}}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
+
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Dropdown
@@ -41,13 +39,13 @@
                             </li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     @php
                         $categories = App\Models\Category::where('navbar_status', '0')->where('status','0')->get();
                     @endphp
                     @foreach ($categories as $cateitem )
                         <li class="nav-item">
-                            <a class="nav-link" href="{{$cateitem->slug}}">{{$cateitem->name}}</a>
+                            <a class="nav-link {{Request::is('tutorials/'.$cateitem->slug) ? 'active' : ''}}" href="{{ url('tutorials/'.$cateitem->slug)}}">{{$cateitem->name}}</a>
                         </li>
                     @endforeach
                 </ul>
