@@ -37,7 +37,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="">Description</label>
-                    <textarea name="description" id="mySummernote" class="form-control" rows="4">{{!! $post->description !!}}</textarea>
+                    <textarea name="description" id="mySummernote" class="form-control" rows="4">{{ $post->description }}</textarea>
                 </div>
                 <div class="mb-3">
                     <label for="">Youtube Iframe Link</label>
@@ -50,11 +50,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="">Meta Description</label>
-                    <textarea name="meta_description" class="form-control" rows="3">990{{!! $post->meta_description !!}}</textarea>
+                    <textarea name="meta_description" class="form-control" rows="3">990{{ $post->meta_description }}</textarea>
                 </div>
                 <div class="mb-3">
                     <label for="">Meta Keywords</label>
-                    <textarea name="meta_keywords" class="form-control" rows="3">{{!! $post->meta_keywords !!}}</textarea>
+                    <textarea name="meta_keywords" class="form-control" rows="3">{{ $post->meta_keywords }}</textarea>
                 </div>
                 <h4>Status</h4>
                 <div class="row">

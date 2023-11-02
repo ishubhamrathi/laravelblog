@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', "$category->meta_title")
+@section('meta_description', "$category->meta_description")
+@section('meta_keywords', "$category->meta_keywords")
 
 @section('content')
 <div class="py-4">
@@ -9,8 +12,6 @@
                     <h4>Category: {{$category->name}}</h4>
                 </div>
                 @forelse ($post as $postitem)
-
-
                 <div class="card card-shadow mt-4">
                     {{-- <img src="{{url('assets/uploads/'.$post->image)}}" class="card-img-top" alt="..."> --}}
                     <div class="card-body">
@@ -30,13 +31,10 @@
                         <br>
                         <br>
                         <h6>Posted On: {{$postitem->created_at->format('d-m-y')}}
-                        <span class="m-3">By: <i>{{$postitem->user->name}}</span>
+                        <span class="m-3">By: {{$postitem->user->name}}</span>
                     </h6>
                     </div>
                 </div>
-                {{-- <div class="pagination">
-                    {{$post->links()}}
-                </div> --}}
                 @empty
                 <div class="card card-shadow mt-4">
                     {{-- <img src="{{url('assets/uploads/'.$post->image)}}" class="card-img-top" alt="..."> --}}
@@ -45,8 +43,11 @@
                     </div>
                 </div>
                 @endforelse
+                <div class="pagination">
+                    {{$post->links()}}
+                </div>
             </div>
-            <div class="col-md-3 my-auto">
+            <div class="col-md-3">
                 <div class="border p-2">
                     advertising area
                 </div>
